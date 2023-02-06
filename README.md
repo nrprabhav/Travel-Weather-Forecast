@@ -14,12 +14,13 @@ A weather display is shown when the page is opened. The features of the page are
 2. Weather forecast for the next five days are displayed below with one card for each day.
 3. A form allows user to type in the place for which the weather is desired
 4. When a place is submitted the weather for that place is displayed
-5. The place is added to the history below the form
-6. The history persists when the page is closed and opened
-7. If same place is submitted again, it is not added to the history
-8. Program will not respond if the place name is blank
-9. If the first letter of the place name is not capitalized, it is automatically capitalized
-10. When one of the places in the history is clicked, the weather for that place is displayed
+5. The weather data is requested from the Open weather map API service
+6. The place is added to the history below the form
+7. The history persists when the page is closed and opened
+8. If same place is submitted again, it is not added to the history
+9. Program will not respond if the place name is blank
+10. If the first letter of the place name is not capitalized, it is automatically capitalized
+11. When one of the places in the history is clicked, the weather for that place is displayed
 
 ## Screenshots
 
