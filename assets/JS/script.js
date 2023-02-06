@@ -2,6 +2,7 @@
 let APIKey = "a4cd937b9cbcabbb845e8b24815e4ab0";
 let coordinates = [0, 0];
 
+// Read search history from local storage or add a new item in the local storage if no history exists
 let searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
 if (searchHistory == null) {
     searchHistory = [];
@@ -50,9 +51,9 @@ function displayCurrentWeather(response) {
 
 function displayForecast(response) {
     // Display the weather forecast for the place using the response from the API as input
-
+    console.log(response);
     for (let i = 1; i < 6; i++) {
-        let time = moment(response.list[(i-1)*8+1].dt, "X");
+        let time = moment(response.list[(i-1)*8+2].dt, "X");
         $("#date"+i).text(time.format("DD-MM-YYYY"));
         $("#weather-icon"+i).attr("src", "http://openweathermap.org/img/wn/" + response.list[i].weather[0].icon + ".png");
         $("#current-temp"+i).text((response.list[i].main.temp - 273.15).toFixed(0));
@@ -120,5 +121,4 @@ $("#history").on("click", "button", function (event) {
     
     // Get Coordinates of the place and then get the forecast
     getCoordinatesAndForecast(queryCoordURL);
-    $("#search-input").val(cityName);
 })
